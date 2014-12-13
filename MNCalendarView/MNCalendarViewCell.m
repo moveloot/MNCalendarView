@@ -46,7 +46,7 @@ NSString *const MNCalendarViewCellIdentifier = @"MNCalendarViewCellIdentifier";
     
     self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
     self.selectedBackgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    self.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:243.0/255.0f green:82.0f/255.0f blue:81.0/255.0f alpha:1.0f];
+    self.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:82.f/255.f green:137.f/255.f blue:191.f/255.f alpha:1.0f];
   }
   return self;
 }
