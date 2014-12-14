@@ -23,32 +23,32 @@
 
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
   
-  NSArray *array =
-    [super layoutAttributesForElementsInRect:({
-      CGRect bounds = self.collectionView.bounds;
-      bounds.origin.y = proposedContentOffset.y - self.collectionView.bounds.size.height/2.f;
-      bounds.size.width *= 1.5f;
-      bounds;
-    })];
+  // NSArray *array =
+  //   [super layoutAttributesForElementsInRect:({
+  //     CGRect bounds = self.collectionView.bounds;
+  //     bounds.origin.y = proposedContentOffset.y - self.collectionView.bounds.size.height/2.f;
+  //     bounds.size.width *= 1.5f;
+  //     bounds;
+  //   })];
   
-  CGFloat minOffsetY = CGFLOAT_MAX;
-  UICollectionViewLayoutAttributes *targetLayoutAttributes = nil;
+  // CGFloat minOffsetY = CGFLOAT_MAX;
+  // UICollectionViewLayoutAttributes *targetLayoutAttributes = nil;
 
-  for (UICollectionViewLayoutAttributes *layoutAttributes in array) {
-    if ([layoutAttributes.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) {
-      CGFloat offsetY = fabs(layoutAttributes.frame.origin.y - proposedContentOffset.y);
+  // for (UICollectionViewLayoutAttributes *layoutAttributes in array) {
+  //   if ([layoutAttributes.representedElementKind isEqualToString:UICollectionElementKindSectionHeader]) {
+  //     CGFloat offsetY = fabs(layoutAttributes.frame.origin.y - proposedContentOffset.y);
 
-      if (offsetY < minOffsetY) {
-        minOffsetY = offsetY;
+  //     if (offsetY < minOffsetY) {
+  //       minOffsetY = offsetY;
 
-        targetLayoutAttributes = layoutAttributes;
-      }
-    }
-  }
+  //       targetLayoutAttributes = layoutAttributes;
+  //     }
+  //   }
+  // }
 
-  if (targetLayoutAttributes) {
-    return targetLayoutAttributes.frame.origin;
-  }
+  // if (targetLayoutAttributes) {
+  //   return targetLayoutAttributes.frame.origin;
+  // }
 
   return CGPointMake(proposedContentOffset.x, proposedContentOffset.y);
 }
