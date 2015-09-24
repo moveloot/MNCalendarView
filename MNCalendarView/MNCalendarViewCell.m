@@ -46,7 +46,8 @@ NSString *const MNCalendarViewCellIdentifier = @"MNCalendarViewCellIdentifier";
     
     self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
     self.selectedBackgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    self.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:243.0/255.0f green:82.0f/255.0f blue:81.0/255.0f alpha:1.0f];
+      
+    self.tintColor = [UIColor colorWithRed:243.0/255.0f green:82.0f/255.0f blue:81.0/255.0f alpha:1.0f];
   }
   return self;
 }
@@ -56,6 +57,7 @@ NSString *const MNCalendarViewCellIdentifier = @"MNCalendarViewCellIdentifier";
   
   self.contentView.frame = self.bounds;
   self.selectedBackgroundView.frame = self.bounds;
+    self.selectedBackgroundView.backgroundColor = self.tintColor;
 }
 
 - (void)drawRect:(CGRect)rect {
